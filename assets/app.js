@@ -159,7 +159,7 @@
     });
     gsap.utils.toArray('[data-count]').forEach(function(el){
       var end=+el.getAttribute('data-count'),o={v:0};
-      ScrollTrigger.create({trigger:el,start:'top 90%',once:true,onEnter:function(){gsap.to(o,{v:end,duration:1.5,ease:'power2.out',onUpdate:function(){el.textContent=Math.round(o.v);}});}});
+      ScrollTrigger.create({trigger:el,start:'top 90%',once:true,onEnter:function(){gsap.to(o,{v:end,duration:1.5,ease:'power2.out',onUpdate:function(){el.textContent=Math.round(o.v).toLocaleString('en-US');}});}});
     });
     // marquees
     document.querySelectorAll('.marq .t').forEach(function(t){
@@ -176,6 +176,19 @@
       var bars=ch.querySelectorAll('.bar');
       bars.forEach(function(b,i){var hpct=+(b.dataset.h||60);
         gsap.fromTo(b,{scaleY:0},{scaleY:hpct/100,duration:1.1,ease:'power3.out',delay:i*.08,scrollTrigger:{trigger:ch,start:'top 82%',once:true}});});
+    });
+    // svg line charts (analytics "screenshots")
+    gsap.utils.toArray('.lc').forEach(function(svg){
+      var line=svg.querySelector('.line');
+      var area=svg.querySelector('.area');
+      var dots=svg.querySelectorAll('.dot');
+      var gls=svg.querySelectorAll('.gl');
+      var tl=gsap.timeline({scrollTrigger:{trigger:svg,start:'top 84%',once:true}});
+      if(line){var len=line.getTotalLength();gsap.set(line,{strokeDasharray:len,strokeDashoffset:len});
+        tl.to(line,{strokeDashoffset:0,duration:1.6,ease:'power2.inOut'},0);}
+      if(gls.length)tl.fromTo(gls,{strokeDashoffset:function(i,el){var l=el.getTotalLength();el.style.strokeDasharray=l;return l;}},{strokeDashoffset:0,duration:1.6,ease:'power2.inOut'},0);
+      if(area)tl.to(area,{opacity:1,duration:1,ease:'power2.out'},.5);
+      if(dots.length)tl.to(dots,{opacity:1,duration:.4,stagger:.12,ease:'back.out(2)'},.7);
     });
     // footer drift
     var fb=document.querySelector('.foot-big');if(fb)gsap.fromTo(fb,{x:-60},{x:30,ease:'none',scrollTrigger:{trigger:'footer',start:'top bottom',end:'bottom top',scrub:true}});
