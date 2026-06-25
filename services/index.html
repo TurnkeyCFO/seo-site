@@ -17,6 +17,11 @@
 </head>
 <body class="lock">
 
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <linearGradient id="fireGrad" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FF1564"/><stop offset="0.5" stop-color="#FF6B00"/><stop offset="1" stop-color="#FFD100"/></linearGradient>
+  <linearGradient id="fireArea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF6B00" stop-opacity="0.30"/><stop offset="1" stop-color="#FF6B00" stop-opacity="0"/></linearGradient>
+</defs></svg>
+
 <div id="pre"><div class="pl">Turnkey<br>SEO</div><div class="pr fire-text" id="preNum">0%</div></div>
 <div id="curtain"></div>
 <div class="cur" id="cur"><span class="lbl"></span></div><div class="cur-d" id="curD"></div>
@@ -82,7 +87,11 @@
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Mobile experience &amp; site architecture</li>
         </ul>
       </div>
-      <div class="vis"><div class="glow"></div><div class="chart"><span class="axis"></span><span class="bar" data-h="38"></span><span class="bar" data-h="52"></span><span class="bar" data-h="61"></span><span class="bar" data-h="74"></span><span class="bar" data-h="88"></span></div></div>
+      <div class="vis"><div class="glow"></div><div class="gaugewrap">
+        <div class="gauge" data-score="98"><div class="ring"><svg viewBox="0 0 120 120"><circle class="track" cx="60" cy="60" r="52"/><circle class="arc" cx="60" cy="60" r="52"/></svg><div class="num">0</div></div><div class="glab">Performance</div></div>
+        <div class="gauge" data-score="100"><div class="ring"><svg viewBox="0 0 120 120"><circle class="track" cx="60" cy="60" r="52"/><circle class="arc" cx="60" cy="60" r="52"/></svg><div class="num">0</div></div><div class="glab">Best practices</div></div>
+        <div class="gauge" data-score="96"><div class="ring"><svg viewBox="0 0 120 120"><circle class="track" cx="60" cy="60" r="52"/><circle class="arc" cx="60" cy="60" r="52"/></svg><div class="num">0</div></div><div class="glab">SEO health</div></div>
+      </div></div>
     </div>
 
     <!-- 02 On-Page -->
@@ -98,7 +107,13 @@
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Copy that reads for humans, ranks for Google</li>
         </ul>
       </div>
-      <div class="vis"><div class="glow"></div><div class="chart"><span class="axis"></span><span class="bar" data-h="44"></span><span class="bar" data-h="58"></span><span class="bar" data-h="70"></span><span class="bar" data-h="82"></span><span class="bar" data-h="95"></span></div></div>
+      <div class="vis bare"><div class="serpmock">
+        <div class="stitle"><span class="sgo"><span style="color:#4285F4">G</span><span style="color:#EA4335">o</span><span style="color:#FBBC05">o</span><span style="color:#4285F4">g</span><span style="color:#34A853">l</span><span style="color:#EA4335">e</span></span><span class="sq">commercial roofing contractor</span></div>
+        <div class="scount">About 2,140,000 results (0.42 seconds)</div>
+        <div class="sr you"><div class="su">yourbusiness.com</div><div class="sh">Commercial Roofing Contractor | Free Inspection &amp; Quote</div><div class="sd">Trusted commercial roofing for businesses — repairs, replacement, and maintenance. Licensed, insured, and rated 5 stars. Book a free inspection today.</div></div>
+        <div class="sr"><div class="su">directory-listings.com › roofers</div><div class="sh">Top 10 Roofing Contractors Near You</div><div class="sd">Browse roofing contractors in your area with reviews and ratings...</div></div>
+        <div class="sr"><div class="su">yelp.com › commercial-roofing</div><div class="sh">Best Commercial Roofing — Reviews</div><div class="sd">Find the best commercial roofing companies near you on Yelp...</div></div>
+      </div></div>
     </div>
 
     <!-- 03 Content -->
@@ -114,7 +129,7 @@
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Topical authority that builds over time</li>
         </ul>
       </div>
-      <div class="vis"><div class="glow"></div><div class="chart"><span class="axis"></span><span class="bar" data-h="30"></span><span class="bar" data-h="46"></span><span class="bar" data-h="64"></span><span class="bar" data-h="80"></span><span class="bar" data-h="98"></span></div></div>
+      <div class="vis ph"><img src="/assets/img/content-write.jpg" alt="Content strategy and writing" loading="lazy"><div class="badge2">Topic clusters</div><div class="cap"><span class="t">Content engine</span><b>Written for intent, built to rank</b></div></div>
     </div>
 
     <!-- 04 Links -->
@@ -130,7 +145,12 @@
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Backlink cleanup &amp; disavow when needed</li>
         </ul>
       </div>
-      <div class="vis"><div class="glow"></div><div class="chart"><span class="axis"></span><span class="bar" data-h="40"></span><span class="bar" data-h="50"></span><span class="bar" data-h="66"></span><span class="bar" data-h="79"></span><span class="bar" data-h="92"></span></div></div>
+      <div class="vis"><div class="glow"></div><svg class="netviz" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Authority and link network">
+        <line class="nl" x1="200" y1="150" x2="80" y2="70"/><line class="nl" x1="200" y1="150" x2="330" y2="80"/><line class="nl" x1="200" y1="150" x2="70" y2="220"/><line class="nl" x1="200" y1="150" x2="320" y2="230"/><line class="nl" x1="200" y1="150" x2="200" y2="46"/><line class="nl" x1="200" y1="150" x2="200" y2="256"/>
+        <line class="nl" x1="80" y1="70" x2="200" y2="46"/><line class="nl" x1="330" y1="80" x2="320" y2="230"/>
+        <circle class="nn" cx="80" cy="70" r="13"/><circle class="nn" cx="330" cy="80" r="11"/><circle class="nn" cx="70" cy="220" r="10"/><circle class="nn" cx="320" cy="230" r="13"/><circle class="nn" cx="200" cy="46" r="11"/><circle class="nn" cx="200" cy="256" r="10"/>
+        <circle class="nc netpulse" cx="200" cy="150" r="22"/>
+      </svg></div>
     </div>
 
     <!-- 05 Local -->
@@ -146,9 +166,19 @@
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> City &amp; service landing pages</li>
         </ul>
       </div>
-      <div class="vis"><div class="glow"></div><div class="chart"><span class="axis"></span><span class="bar" data-h="48"></span><span class="bar" data-h="60"></span><span class="bar" data-h="72"></span><span class="bar" data-h="85"></span><span class="bar" data-h="96"></span></div></div>
+      <div class="vis ph"><img src="/assets/img/retail.jpg" alt="Local business storefront" loading="lazy"><div class="badge2">Local pack · #1</div><div class="cap"><span class="t">Local SEO</span><b>Found first by nearby buyers</b></div></div>
     </div>
 
+  </div>
+</section>
+
+<!-- PHOTO BAND -->
+<section class="photoband">
+  <img src="/assets/img/team.jpg" alt="The Turnkey SEO team at work" loading="lazy">
+  <div class="wrap">
+    <p class="over rv" style="color:var(--yellow)">One team, one system</p>
+    <h2 class="rwords" style="font-size:clamp(28px,4.6vw,64px)">You work with the people doing the work.</h2>
+    <p class="rv">No account-manager telephone game. The strategist building your rankings is the one you talk to — every plan, every report, every win.</p>
   </div>
 </section>
 

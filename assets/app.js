@@ -190,6 +190,38 @@
       if(area)tl.to(area,{opacity:1,duration:1,ease:'power2.out'},.5);
       if(dots.length)tl.to(dots,{opacity:1,duration:.4,stagger:.12,ease:'back.out(2)'},.7);
     });
+    // core-web-vitals gauges (arc draw + number count)
+    gsap.utils.toArray('.gauge').forEach(function(g){
+      var arc=g.querySelector('.arc'),num=g.querySelector('.num');
+      var score=+(g.dataset.score||90);
+      if(arc){var len=arc.getTotalLength();gsap.set(arc,{strokeDasharray:len,strokeDashoffset:len});
+        gsap.to(arc,{strokeDashoffset:len*(1-score/100),duration:1.5,ease:'power2.out',scrollTrigger:{trigger:g,start:'top 86%',once:true}});}
+      if(num){var o={v:0};ScrollTrigger.create({trigger:g,start:'top 86%',once:true,onEnter:function(){gsap.to(o,{v:score,duration:1.5,ease:'power2.out',onUpdate:function(){num.textContent=Math.round(o.v);}});}});}
+    });
+    // map pins drop in
+    gsap.utils.toArray('.mapviz').forEach(function(m){
+      var pins=m.querySelectorAll('.pin');
+      gsap.set(pins,{y:-18,opacity:0});
+      gsap.to(pins,{y:0,opacity:1,duration:.6,ease:'back.out(2.2)',stagger:.12,scrollTrigger:{trigger:m,start:'top 84%',once:true}});
+    });
+    // authority network draw + nodes
+    gsap.utils.toArray('.netviz').forEach(function(nv){
+      var lines=nv.querySelectorAll('.nl'),nodes=nv.querySelectorAll('.nn,.nc');
+      var tl=gsap.timeline({scrollTrigger:{trigger:nv,start:'top 84%',once:true}});
+      lines.forEach(function(l){var len=l.getTotalLength();gsap.set(l,{strokeDasharray:len,strokeDashoffset:len});});
+      tl.to(lines,{strokeDashoffset:0,duration:1,ease:'power2.out',stagger:.05},0);
+      gsap.set(nodes,{scale:0,transformOrigin:'center'});
+      tl.to(nodes,{scale:1,duration:.5,ease:'back.out(2.4)',stagger:.05},.3);
+    });
+    // content cluster
+    gsap.utils.toArray('.clusterviz').forEach(function(cv){
+      var lines=cv.querySelectorAll('.cl'),nodes=cv.querySelectorAll('.cnode,.chub');
+      var tl=gsap.timeline({scrollTrigger:{trigger:cv,start:'top 84%',once:true}});
+      lines.forEach(function(l){var len=l.getTotalLength();gsap.set(l,{strokeDasharray:len,strokeDashoffset:len});});
+      tl.to(lines,{strokeDashoffset:0,duration:.9,ease:'power2.out',stagger:.05},0);
+      gsap.set(nodes,{scale:0,transformOrigin:'center'});
+      tl.to(nodes,{scale:1,duration:.5,ease:'back.out(2.4)',stagger:.06},.25);
+    });
     // footer drift
     var fb=document.querySelector('.foot-big');if(fb)gsap.fromTo(fb,{x:-60},{x:30,ease:'none',scrollTrigger:{trigger:'footer',start:'top bottom',end:'bottom top',scrub:true}});
     // progress
